@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  nasa-pod:
+    build:
+      context: .
+    volumes:
+      - ./:/nasa
+    env_file:
+      - .env

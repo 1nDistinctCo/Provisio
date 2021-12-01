@@ -1,0 +1,11 @@
+{
+    
+    "picture_of_the_day":{
+        "count":20 ,
+        "date":null,
+        "start_date":null,
+        "end_date":null,
+        "picture_folder": "pictures"
+    }
+    
+}

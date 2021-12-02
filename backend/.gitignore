@@ -1,5 +1,0 @@
-.env
-pictures/*
-logs/*
-__pycache__/*
-**/__pycache__/*

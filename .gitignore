@@ -1,0 +1,5 @@
+**/.env
+**/pictures/*
+**/logs/*
+
+**/__pycache__/*

@@ -9,3 +9,11 @@ services:
       - ./backend:/api
     env_file:
       - ./backend/.env
+  ui:
+    build:
+      context: ./frontend
+    ports:
+    - 7000:7000
+    volumes:
+      - ./frontend:/ui
+

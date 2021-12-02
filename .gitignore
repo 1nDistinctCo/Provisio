@@ -1,5 +1,5 @@
 **/.env
 **/pictures/*
 **/logs/*
-
+**/node_modules/*
 **/__pycache__/*

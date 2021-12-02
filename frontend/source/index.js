@@ -9,8 +9,8 @@ app.disable('x-powered-by');
 app.use(morgan('combined'))
 app.use(helmet())
 
-app.get('/', (req, res) => {
-    result.render("index");
+app.get('/', (request, result) => {
+    result.render("index",{name:"Ciaran"});
   });
 
   app.on('close', () => {

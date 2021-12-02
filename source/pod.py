@@ -34,8 +34,8 @@ def get_photo(dict_body:dict,picture_folder:str):
 
 def get_picture_of_the_day(config:dict):
     """Get the picture of the day from nasa api"""
-    pic_folder = config.get("picture_folder")
-    picture_folder = f"{pic_folder}_{str(datetime.today())}"
+    
+    picture_folder = "pictures"
     start_date = config.get("start_date") if check_date(config.get("start_date")) else None
     end_date = config.get("end_date") if check_date(config.get("end_date")) else None
     date_ = config.get("date") if check_date(config.get("date")) else None

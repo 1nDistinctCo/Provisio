@@ -1,5 +1,6 @@
-
+import logging
 import json
+import os
 from datetime import datetime
 from bs4 import BeautifulSoup
 from .consts import (
@@ -10,6 +11,14 @@ from .consts import (
     HTML_PARAGRAPH,
     HTML_HEADING
 )
+
+def get_logger():
+    
+    if not os.path.exists("./logs"):
+        os.mkdir("./logs")
+    logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO,filename="./logs/logs.log")
+    return logging.getLogger("nasa-pod")
+    
 
 def create_html_image(path:str,title:str,description:str) -> str:
     image = BeautifulSoup(HTML_IMAGE.format(path=path,title=title,height=600,width=800),features="html.parser")

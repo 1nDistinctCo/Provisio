@@ -3,6 +3,8 @@ services:
   nasa-pod:
     build:
       context: .
+    ports:
+    - 8000:8000
     volumes:
       - ./:/nasa
     env_file:

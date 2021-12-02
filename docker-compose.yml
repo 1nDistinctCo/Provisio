@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  nasa-pod:
+  api:
     build:
-      context: .
+      context: ./backend
     ports:
     - 8000:8000
     volumes:
-      - ./:/nasa
+      - ./backend:/api
     env_file:
-      - .env
+      - ./backend/.env

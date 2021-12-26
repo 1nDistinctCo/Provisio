@@ -13,7 +13,8 @@ type ToggleTodo = (selectedTodo: Todo) => void;
 type AddTodo = (text:string ) => void;
 
 interface Picture {
-  heading:string 
+  title:string 
   image_path:string
   description:string
+  date:string
  }

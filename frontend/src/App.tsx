@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { PictureList } from './pictures/PictureList';
+import React, { useState,useEffect } from 'react';
 
+import { PictureList } from './pictures/PictureList';
+import axios from 'axios';
 
 // const initialTodos: Todo[] = [
 //   {
@@ -14,21 +15,41 @@ import { PictureList } from './pictures/PictureList';
 // ]
 const initialPictures: Picture[] = [
   {
-    heading:'No Image',
+    title:'No Image',
     image_path: './logo512.png',
-    description: 'No Image'
+    description: 'No Image',
+    date:'today'
   }
 ]
 
 
 function App() {
   const [pictures,setPictures] = useState(initialPictures)
-  return (
+  const [data,setData] = useState([{}])
+  const getPicOfDay = (params:object) => {
+    return axios.get<string>('localhost:8000',{params:params}).then((response) =>{
+        if (response.status ===200){
+            setData(JSON.parse(response.data))
+        }
+        throw new Error(response.status.toString());
+
+    }).catch(({response}) => {
+        throw new Error(response.status)
+    })
+    }
+    getPicOfDay({count:1}).then((result)=>{return result})
+    // useEffect(() => {
+    //   document.title = JSON.stringify(data)
+    // })
+    return(
     <>
       <PictureList pictures={pictures} />
+      {/* <p>{data}</p> */}
     </> 
+    
   )
 }
+    
 
 // function App() {
 //   const [todos,setTodos] = useState(initialTodos)

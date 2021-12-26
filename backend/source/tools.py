@@ -2,15 +2,7 @@ import logging
 import json
 import os
 from datetime import datetime
-from bs4 import BeautifulSoup
-from .consts import (
-    HTML_HEAD,
-    HTML_TITLE,
-    HTML_BODY,
-    HTML_IMAGE,
-    HTML_PARAGRAPH,
-    HTML_HEADING
-)
+
 
 def get_logger():
     
@@ -19,23 +11,6 @@ def get_logger():
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO,filename="./logs/logs.log")
     return logging.getLogger("nasa-pod")
     
-
-def create_html_image(path:str,title:str,description:str) -> str:
-    image = BeautifulSoup(HTML_IMAGE.format(path=path,title=title,height=600,width=800),features="html.parser")
-    title = BeautifulSoup(HTML_HEADING.format(content=title,size=1),features="html.parser")
-    description= BeautifulSoup(HTML_PARAGRAPH.format(content=description),features="html.parser")
-    return str(title)+str(image)+str(description)
-
-def create_html_head(title:str) -> BeautifulSoup:
-    page_head = BeautifulSoup(HTML_HEAD,features="html.parser")
-    page_title = HTML_TITLE.format(title=title) 
-    page_head.find(text="head").replace_with(page_title)
-    return page_head
-
-def create_html_body(page_body_content:BeautifulSoup) -> BeautifulSoup:
-    page_body = BeautifulSoup(HTML_BODY,features="html.parser")
-    page_body.find("body").replace_with(page_body_content)
-    return page_body
 
 def get_config() -> dict:
     """get config options from config.json"""

@@ -8,7 +8,11 @@ export const Picture: React.FC<Props> = ({picture}) => {
     return (
         <div className="picture">
           <h1 >{picture.title}</h1>
-          <img src={picture.image} alt={picture.title} style={{width: 600, height: 600}}/>
+          <img src={picture.image} alt={picture.title} style={{
+              maxWidth:1280, maxHeight: 720,
+              width:'auto',height:'auto'
+              
+              }}/>
           <p> Date: {picture.date}</p>
           <p>{picture.description}</p>
         </div>

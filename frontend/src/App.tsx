@@ -1,12 +1,16 @@
 import { PictureList } from './pictures/PictureList';
-
+import './styles/App.css'
 
 function App() {
 
     return(
     <>
-      <PictureList />
-    </>  
+    <div>
+        <PictureList />
+      </div>
+    </>
+    
+     
   )
 }
     

@@ -1,0 +1,12 @@
+.picture{ 
+    color:azure;
+    opacity: 85%;
+    background-color: black;
+    text-align: center;
+    border-radius: 25px;
+}
+body{
+    background-color: black;
+    background-image: url('/public/background.jpg');
+    height:100%;
+}

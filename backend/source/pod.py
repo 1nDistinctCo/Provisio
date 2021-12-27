@@ -17,9 +17,6 @@ def get_photo(dict_body:dict):
     pic_date = dict_body.get("date")
     pic_description = dict_body.get("explanation")
     image_url = dict_body.get("hdurl") if dict_body.get("hdurl") is not None else dict_body.get("url")
-    pic_req=requests.get(image_url,params={"api_key":NASA_API_KEY_PARAM})
-    picture_bytes = pic_req.content
-    logging.info(pic_req.headers)
     return {
         "title":pic_title,
         "date":pic_date,

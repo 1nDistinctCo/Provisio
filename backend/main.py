@@ -1,11 +1,7 @@
-
-
-import html
 import logging
 import json
 from falcon.asgi import App, Request,Response
-from falcon import MEDIA_JPEG
-import aiofiles
+from falcon import CORSMiddleware
 from source import (
     get_picture_of_the_day,
     get_logger,
@@ -16,9 +12,11 @@ from source import (
 
 def create_app():
     get_logger()
-    app = App()
+    app = App(middleware=CORSMiddleware(
+        allow_origins='http://localhost:3000', allow_credentials='*'))
     app.add_route('/pod', PictureOfTheDay())
     return app
+
 
 class PictureOfTheDay:
 

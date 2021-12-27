@@ -3,7 +3,6 @@ import requests
 import logging 
 import json
 import time
-from base64 import b64decode
 from .tools import (
     add_if_not_none,
     check_int,
@@ -24,7 +23,7 @@ def get_photo(dict_body:dict):
     return {
         "title":pic_title,
         "date":pic_date,
-        "picture": picture_bytes.decode('ISO-8859-1'),
+        "image": image_url,
         "description":pic_description
     }
     

@@ -14,7 +14,7 @@ type AddTodo = (text:string ) => void;
 
 interface Picture {
   title:string 
-  image_path:string
+  image:string
   description:string
   date:string
  }

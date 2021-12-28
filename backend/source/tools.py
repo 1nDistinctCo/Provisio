@@ -32,11 +32,11 @@ def check_date(date_string:str) -> bool:
     if date_string is None:
         return False
     try:
-        datetime.strptime(date_string, "Y-m-d")
+        datetime.strptime(date_string, "%Y-%m-%d")
         return True
     except Exception as e:
-        print(e.__dict__)
-        print(f"{date_string} is in the wrong format.") 
+        logging.info(e.__dict__)
+        logging.info(f"{date_string} is in the wrong format.") 
         return False
 
 def check_int(value:str) -> bool:
@@ -44,6 +44,6 @@ def check_int(value:str) -> bool:
         int(value)
         return True
     except TypeError as e:
-        print(e.__dict__)
-        print(f"{value} is not an integer.")
+        logging.info(e.__dict__)
+        logging.info(f"{value} is not an integer.")
         return False

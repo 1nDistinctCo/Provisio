@@ -5,6 +5,20 @@
     border-radius: 5px;
     width: 97%;
 }
+.picture-settings{ 
+    color:azure;
+    background-color: rgba(8, 5, 15,0.8);
+    text-align: left;
+    border-radius: 5px;
+    width: 97%;
+    display:flexbox;
+    flex-direction: column;
+}
+.basic-text{
+    color:azure;
+    background-color: rgba(8, 5, 15,0);
+    text-align: center;
+}
 
 body{
     background-color: black;
@@ -16,8 +30,7 @@ body{
     background-color:rgba(8, 5, 15, 0.8);
     border-radius: 5px;
     position:relative;
-    text-align: center;
-    display:table;
+    display:-webkit-inline-box;
     color: white;
     width: 100%;
     height: 110px;
@@ -26,10 +39,15 @@ body{
 ul{
     list-style-type: none;
 }
-a{
+.NavBarLink{
     color:rgb(163, 159, 159);
     background-color:rgb(50, 50, 61);
     border-radius: 25px;
     padding: 5px;
+    margin: 10px;
     text-decoration: none;
+    vertical-align:-50px;
+    position: relative;
+    
+    
 }

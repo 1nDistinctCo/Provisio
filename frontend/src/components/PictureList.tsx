@@ -45,7 +45,7 @@ export const PictureList: React.FC<Props> = () => {
   }
   
   return (
-      <ul>
+      <ul className="picture">
       {
         pics.map((picture) =>(
           <Picture key={picture.title} picture={picture} />

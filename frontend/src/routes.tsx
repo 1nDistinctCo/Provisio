@@ -1,4 +1,4 @@
-import  Pod  from './views/pod';
+import { Pod }  from './views/pod';
 import Home from './views/home';
 import  NavBar  from './components/navBar';
 import { Route, Routes } from 'react-router-dom';

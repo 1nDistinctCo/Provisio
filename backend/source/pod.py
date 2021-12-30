@@ -47,7 +47,6 @@ def get_picture_of_the_day(config:dict):
     bytes_body = picture_of_the_day.content
     str_body = bytes_body.decode("utf-8")
     json_body = json.loads(str_body)
-    logging.info(json_body)
     if isinstance(json_body,dict):
         json_body = [json_body]
     pictures = [get_photo(picture) for picture in json_body]

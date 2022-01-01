@@ -12,7 +12,7 @@ export const SiteRoutes = () => {
         <Route path="/" element={<Home />}/>
       </Routes>
       <footer>
-      <a style={{color:'gray'}} href='https://pngtree.com/so/Pure'>ref</a>
+    
       </footer>
     </div>
   );

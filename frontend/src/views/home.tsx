@@ -4,7 +4,7 @@ interface Props{}
 const Home:React.FC<Props> = () => {
     return (
       <div className='basic-text'>
-          <h1>Welcome to Fun with friends!</h1>
+          <h1>Welcome to The InDistinct Co!</h1>
       </div>
     );
   };

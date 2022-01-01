@@ -1,21 +1,34 @@
 version: "3.9"
 services:
   api:
+    container_name: api
+    hostname: api
     build:
       context: ./backend
     image: api
-    ports:
-    - 8000:8000
     volumes:
       - ./backend:/api
     env_file:
       - ./backend/.env
   ui:
+    container_name: ui
+    hostname: ui
     build:
       context: ./frontend
     image: ui
-    ports:
-    - 3000:3000
     volumes:
       - ./frontend:/ui
 
+
+  nginx-reverse-proxy:
+    container_name: nginx
+    hostname: nginx
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/config:/etc/nginx
+      - ./nginx/certs:/etc/ssl/private

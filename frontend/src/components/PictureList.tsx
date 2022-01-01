@@ -20,9 +20,9 @@ const getPicOfDay = async (filter:string,count:string,dateValue:Date,today:Date,
   else if (filter === 'dateRange'){
     queryParams = {start_date:dateToString(dateRange.startDate), end_date:dateToString(dateRange.endDate)}
   }
-  
+
   try{
-    const {data}= await axios.get('http://localhost:8000/pod',{params:queryParams,headers:{'Access-Control-Allow-Origin': "http://localhost:8000/pod"}})
+    const {data}= await axios.get(`${process.env.REACT_APP_BACKEND_URL}/pod`,{params:queryParams,headers:{'Access-Control-Allow-Origin': `${process.env.BACKEND_URL}/pod`}})
     return data
   } catch(error) {
     console.log(error)

@@ -5,6 +5,7 @@ from falcon import CORSMiddleware
 from source import (
     get_picture_of_the_day,
     get_logger,
+    FRONTEND_URL
     
 )
 
@@ -13,8 +14,8 @@ from source import (
 def create_app():
     get_logger()
     app = App(middleware=CORSMiddleware(
-        allow_origins='http://localhost:3000', allow_credentials='*'))
-    app.add_route('/pod', PictureOfTheDay())
+        allow_origins=FRONTEND_URL, allow_credentials='*'))
+    app.add_route('/api/pod', PictureOfTheDay())
     return app
 
 

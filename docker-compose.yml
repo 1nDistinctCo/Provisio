@@ -23,12 +23,10 @@ services:
   nginx-reverse-proxy:
     container_name: nginx
     hostname: nginx
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
     image: nginx
     ports:
       - 80:80
       - 443:443
     volumes:
       - ./nginx/config:/etc/nginx
-      - ./nginx/certs:/etc/ssl/private
+      - /etc/letsencrypt/live/theindistinctco.com:/etc/ssl/private

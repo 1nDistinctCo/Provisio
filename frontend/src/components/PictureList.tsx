@@ -4,11 +4,25 @@ import axios from 'axios'
 import { dateToString } from '../views/pod';
 import { initialPictures } from "../objects";
 import "react-datepicker/dist/react-datepicker.css";
+import { Row, Toast } from "react-bootstrap";
 interface Props {
 
     pictureData:Picture[]
 }
 
+const Confirmation = ( toggle:any ) =>{
+  return (
+    <Toast onClose={() =>toggle(false)}>
+      <Toast.Header>
+        <strong className='me-auto'>We are filtering the images</strong>
+        <small>just now</small>
+      </Toast.Header>
+      <Toast.Body>
+        Your Images will be viewable shortly.
+      </Toast.Body>
+    </Toast>
+  )
+}
 const getPicOfDay = async (filter:string,count:string,dateValue:Date,today:Date,dateRange:any) =>{
   let queryParams = {}
   if (filter === 'date' && dateToString(dateValue) !== dateToString(today)){
@@ -36,14 +50,16 @@ const PictureList: React.FC<Props> = ({pictureData}) => {
   
   return (
     <>
-      <ul className="picture">
-      {
-        pictureData.map((picture) =>(
-          <Picture key={picture.title} picture={picture} />
-        ))
-      }
-      </ul>
+    <Confirmation/>
+    <Row>
+    {
+      pictureData.map((picture) =>(
+        <Picture key={picture.title} picture={picture} />
+      ))
+    }
+    </Row>
     </>
+    
     )
 }
 

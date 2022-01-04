@@ -1,13 +1,13 @@
 import React, {useState,useEffect} from 'react'
 import { PictureList, getPicOfDay } from '../components/PictureList';
 import DatePicker from "react-datepicker";
-import { initialPictures } from '../objects'
+import { initialPictures } from '../objects';
+
 interface Props{}
 
 const dateToString = (date:Date) => {
   return date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
 }
-
 
 
 const Pod:React.FC<Props> = () => {

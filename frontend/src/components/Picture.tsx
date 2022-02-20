@@ -7,7 +7,7 @@ interface Props {
 export const Picture: React.FC<Props> = ({picture}) => {
     
     return (
-        <Card>
+        <Card className="card">
             <Card.Title>{picture.title}</Card.Title>
             <Card.Subtitle>Date: {picture.date}</Card.Subtitle>
             <Card.Img src={picture.image} alt={picture.title} style={{

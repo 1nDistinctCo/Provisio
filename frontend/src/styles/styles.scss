@@ -1,54 +1,67 @@
-// .picture{ 
-//     color:azure;
-//     background-color: rgba(28, 25, 75, 0.5);
-//     text-align: center;
-//     border-radius: 5px;
-//     width: 97%;
-// }
+
 @import "~bootstrap/scss/bootstrap";
-.picture-settings{ 
-    color:azure;
-    background-color: rgba(28, 25, 75, 0.5);
-    text-align: left;
-    border-radius: 5px;
-    width: 97%;
-    display:flexbox;
-    flex-direction: column;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-850: #272c31;
+$gray-900: #212529;
+$black:    #000;
+$primary:       $dark;
+$secondary:     $gray-850;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-900;
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+body {
+    background-image: url('../../public/background.jpg');
 }
-// .basic-text{
-//     color:azure;
-//     background-color: rgba(8, 5, 15,0);
-//     text-align: center;
-// }
-
-// body{
-//     background-color: black;
-//     background-image: url('../../public/background.jpg');
-
-// }
-
-// .NavBar {
-//     background-color:rgba(28, 25, 75, 0.5);
-//     border-radius: 5px;
-//     position:relative;
-//     display:-webkit-inline-box;
-//     color: white;
-//     width: 100%;
-//     height: 110px;
-      
-//   }
-// ul{
-//     list-style-type: none;
-// }
-.NavBarLink{
-    color:rgb(163, 159, 159);
-    background-color:rgb(50, 50, 61);
-    border-radius: 25px;
-    padding: 5px;
-    margin: 10px;
-    text-decoration: none;
-    vertical-align:-50px;
-    position: relative;
-    
-    
+.filter{
+    color: $gray-100;
+    background-color: $secondary;
+    opacity: 0.95;
 }
+.navBar{
+    color: $gray-100;
+    background-color: $primary;
+    opacity: 0.95;
+}
+.card{
+    color: $gray-100;
+    background-color: $primary;
+    opacity: 0.95;
+}
+nav .navbar-nav li a{
+    color: white;
+    }

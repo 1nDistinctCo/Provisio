@@ -23,7 +23,7 @@ const Confirmation = ( toggle:any ) =>{
     </Toast>
   )
 }
-const getPicOfDay = async (filter:string,count:string,dateValue:Date,today:Date,dateRange:any) =>{
+const getPicOfDay = async (filter:string, count:string, dateValue:Date, today:Date, dateRange:any) =>{
   let queryParams = {}
   if (filter === 'date' && dateToString(dateValue) !== dateToString(today)){
     queryParams = {date:dateToString(dateValue)}
@@ -50,7 +50,7 @@ const PictureList: React.FC<Props> = ({pictureData}) => {
   
   return (
     <>
-    <Confirmation/>
+    {/* <Confirmation/> */}
     <Row>
     {
       pictureData.map((picture) =>(

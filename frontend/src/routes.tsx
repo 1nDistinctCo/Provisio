@@ -1,5 +1,5 @@
 import { Pod }  from './views/pod';
-import Home from './views/home';
+
 import  NavBar  from './components/navBar';
 import { Route, Routes } from 'react-router-dom';
 
@@ -12,8 +12,7 @@ export const SiteRoutes = () => {
     <div>
       <NavBar />
       <Routes>
-        <Route path="/pod" element={<Pod />} />
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Pod />} />
       </Routes>
       <footer>
     

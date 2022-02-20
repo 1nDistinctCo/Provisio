@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import { PictureList, getPicOfDay } from '../components/PictureList';
 import DatePicker from "react-datepicker";
 import { initialPictures } from '../objects';
-
+import { Card } from 'react-bootstrap';
 interface Props{}
 
 const dateToString = (date:Date) => {
@@ -53,8 +53,9 @@ const Pod:React.FC<Props> = () => {
 
   const htmlFilter = getFilter()
   return (
-    <div>
-      <div className='picture-settings'>
+    
+    <div className="filter">
+      <div >
       <h3>Filters</h3>
       <select value={filter} onChange={(e) => {
         setFilter(e.target.value)

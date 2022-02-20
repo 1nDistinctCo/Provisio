@@ -1,7 +1,7 @@
 
 .PHONY up:
 up:
-	docker-compose up --detach
+	docker-compose up 
 
 .PHONY build:
 build:

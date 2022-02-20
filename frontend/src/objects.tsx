@@ -9,4 +9,4 @@ const initialPictures: Picture[] = [
     }
   ]
 
-export {initialPictures};
+export { initialPictures };
